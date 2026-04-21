@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "id": "policy-test",
+  "display_name": "Policy Test",
+  "version": "1.0.0",
+  "namespace": "project.policy-test",
+  "backend": {
+    "entry_point": "agentforge_policy.plugin:register",
+    "routes_prefix": "/api/policy-test",
+    "resource_providers": []
+  },
+  "agents": [
+    { "name": "risky-agent", "path": "agentforge_policy/agents/risky_agent" },
+    { "name": "budget-agent", "path": "agentforge_policy/agents/budget_agent" }
+  ],
+  "frontend": {
+    "remote_url": "",
+    "nav_label": "Policy Test",
+    "nav_icon": "Shield",
+    "route": "/policy-test"
+  }
+}

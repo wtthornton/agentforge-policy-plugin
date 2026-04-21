@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentforge-policy-plugin"
+version = "1.0.0"
+description = "Policy test-rig plugin for AgentForge. Exercises RiskLevelGuard and BudgetGuard with deterministic agents — no LLM, no network."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "pydantic>=2.0",
+]
+
+[project.entry-points."agentforge.plugins"]
+policy-test = "agentforge_policy"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agentforge_policy"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"agentforge_policy/plugin.json" = "agentforge_policy/plugin.json"
+"agentforge_policy/agents/risky_agent/AGENT.md" = "agentforge_policy/agents/risky_agent/AGENT.md"
+"agentforge_policy/agents/budget_agent/AGENT.md" = "agentforge_policy/agents/budget_agent/AGENT.md"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "httpx>=0.28",
+]
