@@ -9,7 +9,9 @@ risk_level: low
 max_budget_usd: 1.0
 completion_criteria: "ok"
 runner: agentforge_policy.agents.low_risk_agent.runner:LowRiskRunner
-scheduler: {}
+scheduler:
+  trigger: interval
+  interval_seconds: 86400
 ---
 
 # Low-Risk Agent

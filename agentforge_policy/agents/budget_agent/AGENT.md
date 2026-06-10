@@ -10,7 +10,9 @@ model: sonnet
 memory_profile: none
 max_budget_usd: 99.0
 runner: agentforge_policy.agents.budget_agent.runner:BudgetRunner
-scheduler: {}
+scheduler:
+  trigger: interval
+  interval_seconds: 86400
 ---
 
 # Budget Agent

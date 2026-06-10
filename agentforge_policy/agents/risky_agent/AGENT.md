@@ -11,7 +11,9 @@ memory_profile: none
 risk_level: high
 completion_criteria: "risky"
 runner: agentforge_policy.agents.risky_agent.runner:RiskyRunner
-scheduler: {}
+scheduler:
+  trigger: interval
+  interval_seconds: 86400
 ---
 
 # Risky Agent

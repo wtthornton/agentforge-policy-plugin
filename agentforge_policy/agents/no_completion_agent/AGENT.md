@@ -9,7 +9,9 @@ risk_level: low
 max_budget_usd: 1.0
 completion_criteria: "must-appear-in-output"
 runner: agentforge_policy.agents.no_completion_agent.runner:NoCompletionRunner
-scheduler: {}
+scheduler:
+  trigger: interval
+  interval_seconds: 86400
 ---
 
 # No-Completion Agent
