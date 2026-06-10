@@ -19,9 +19,10 @@ _NAMESPACE = "project.policy-test"
 
 
 def register(app: FastAPI) -> None:
-    from agentforge_policy.routes import router
+    from agentforge_policy.routes import demo_router, router
 
     app.include_router(router)
+    app.include_router(demo_router)
 
     agent_loader = getattr(app.state, "agent_loader", None)
     if agent_loader is None:

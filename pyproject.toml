@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "agentforge-policy-plugin"
-version = "1.0.0"
+version = "1.1.0"
 description = "Policy test-rig plugin for AgentForge. Exercises RiskLevelGuard and BudgetGuard with deterministic agents — no LLM, no network."
 requires-python = ">=3.12"
 dependencies = [
@@ -22,9 +22,15 @@ packages = ["agentforge_policy"]
 "agentforge_policy/plugin.json" = "agentforge_policy/plugin.json"
 "agentforge_policy/agents/risky_agent/AGENT.md" = "agentforge_policy/agents/risky_agent/AGENT.md"
 "agentforge_policy/agents/budget_agent/AGENT.md" = "agentforge_policy/agents/budget_agent/AGENT.md"
+"agentforge_policy/agents/low_risk_agent/AGENT.md" = "agentforge_policy/agents/low_risk_agent/AGENT.md"
+"agentforge_policy/agents/no_completion_agent/AGENT.md" = "agentforge_policy/agents/no_completion_agent/AGENT.md"
 
 [dependency-groups]
 dev = [
     "pytest>=9.0",
+    "pytest-asyncio>=1.0",
     "httpx>=0.28",
 ]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

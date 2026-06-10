@@ -9,7 +9,9 @@ utterances:
 model: sonnet
 memory_profile: none
 risk_level: high
+completion_criteria: "risky"
 runner: agentforge_policy.agents.risky_agent.runner:RiskyRunner
+scheduler: {}
 ---
 
 # Risky Agent
